@@ -78,3 +78,5 @@ gem "cssbundling-rails", "~> 1.3"
 gem "jsbundling-rails", "~> 1.2"
 
 gem "activestorage", "~> 7.0"
+
+gem "image_processing", "~> 1.12"
