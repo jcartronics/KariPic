@@ -6,7 +6,7 @@
     <div class="card-body">
       <div class="owner-avatar">
         <% if post.user.avatar.attached? %>
-          <%= image_tag post.user.avatar[0], class: 'rounded-circle w-100' %>
+          <%= image_tag post.user.avatar, class: 'rounded-circle w-100' %>
         <% end %>
       </div>
       <h5 class="card-title"><%= post.title %></h5>
