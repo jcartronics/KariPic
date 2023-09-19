@@ -1,17 +1,18 @@
-<div id="<%= dom_id post %>">
-  <p>
-    <strong>Title:</strong>
-    <%= post.title %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= post.description %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= post.user_id %>
-  </p>
-
+<div class="col-3">
+  <div class="card">
+    <% if post.images.attached? %>
+      <%= image_tag post.images[0], class: 'card-img-top' %>
+    <% end %>
+    <div class="card-body">
+      <div class="owner-avatar">
+        <% if post.user.avatar.attached? %>
+          <%= image_tag post.user.avatar[0], class: 'rounded-circle w-100' %>
+        <% end %>
+      </div>
+      <h5 class="card-title"><%= post.title %></h5>
+      <p class="card-text">
+        <strong>Descripcion:</strong><%= post.description %><br>
+      </p>
+    </div>
+  </div>
 </div>

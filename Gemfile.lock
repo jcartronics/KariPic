@@ -230,6 +230,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  activestorage (~> 7.0)
   bootsnap
   capybara
   cssbundling-rails (~> 1.3)
