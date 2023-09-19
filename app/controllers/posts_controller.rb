@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :verifica_admin, only: [:new, :edit, :update, :destroy]
   before_action :set_post, only: %i[ show edit update destroy ]
 
   # GET /posts or /posts.json
@@ -12,7 +13,7 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
-    @post = Post.new
+      @post = Post.new
   end
 
   # GET /posts/1/edit
@@ -67,5 +68,12 @@ class PostsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def post_params
       params.require(:post).permit(:title, :description, :user_id, images: [])
+    end
+
+    def verifica_admin
+      if current_user.admin?
+      else
+        redirect_to root_path, notice: "Solo los administradores pueden realizar esta acción."
+      end
     end
 end
