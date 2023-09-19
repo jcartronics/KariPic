@@ -13,7 +13,6 @@ class User < ApplicationRecord
   validate :avatar_file_size
 
   def avatar_content_type
-    puts avatar.content_type
     if !avatar.content_type.in?(%('image/jpeg image/png'))
       errors.add(:avatar, "La imagen debe ser JPEG o PNG")
       puts "La imagen debe ser JPEG o PNG y es #{avatar.content_type}"
