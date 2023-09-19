@@ -80,3 +80,7 @@ gem "jsbundling-rails", "~> 1.2"
 gem "activestorage", "~> 7.0"
 
 gem "image_processing", "~> 1.12"
+
+gem "figaro", "~> 1.2"
+
+gem "aws-sdk-s3", "~> 1.134"
